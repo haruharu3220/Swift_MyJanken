@@ -32,7 +32,14 @@ struct ContentView: View {
             }
             Button(action: {
 //                    print("タップされたよ")
-                jankenNumber = Int.random(in: 1...3)
+//                jankenNumber = Int.random(in: 1...3)
+                var newJankenNumber = 0
+                //繰り返し
+                repeat{
+                    newJankenNumber = Int.random(in: 1...3)
+                }while jankenNumber == newJankenNumber
+                
+                jankenNumber = newJankenNumber
             }, label: {
                 Text("じゃんけんをする")
             })
