@@ -15,6 +15,13 @@ struct ContentView: View {
             Image("gu")
                 .resizable()
                 .scaledToFit()
+            Text("グー")
+            Button(action: {
+                print("タップされたよ")
+            }, label: {
+                Text("じゃんけんをする")
+            })
+
         }
         
 
