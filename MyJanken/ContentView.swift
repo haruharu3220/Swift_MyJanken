@@ -8,23 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var jankenNumber = 0
     var body: some View {
-        
         VStack {
-//            Image(.gu)　だとエラー
-            Image("gu")
-                .resizable()
-                .scaledToFit()
-            Text("グー")
+            if jankenNumber == 0{
+                Text("これからじゃんけんをします")
+            }else if jankenNumber == 1{
+//                Image(.gu)　だとエラー
+                Image("gu")
+                    .resizable()
+                    .scaledToFit()
+                Text("グー")
+            }else if jankenNumber == 2{
+                Image("choki")
+                    .resizable()
+                    .scaledToFit()
+                Text("チョキ")
+            }else {
+                Image("pa")
+                    .resizable()
+                    .scaledToFit()
+                Text("パー")
+            }
             Button(action: {
-                print("タップされたよ")
+//                    print("タップされたよ")
+                jankenNumber = Int.random(in: 1...3)
             }, label: {
                 Text("じゃんけんをする")
             })
-
         }
-        
-
     }
 }
 
