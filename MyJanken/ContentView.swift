@@ -9,7 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Image(.gu).resizable().scaledToFit()
+        
+        VStack {
+//            Image(.gu)　だとエラー
+            Image("gu")
+                .resizable()
+                .scaledToFit()
+        }
+        
+
     }
 }
 
